@@ -1,5 +1,12 @@
 class Minesweeper {
     constructor() {
+        this.difficulties = {
+            easy: { rows: 9, cols: 9, mines: 10 },
+            medium: { rows: 16, cols: 16, mines: 40 },
+            hard: { rows: 16, cols: 30, mines: 99 }
+        };
+        
+        this.currentDifficulty = 'easy';
         this.rows = 9;
         this.cols = 9;
         this.mineCount = 10;
@@ -9,6 +16,7 @@ class Minesweeper {
         this.timerDisplay = document.getElementById('timer');
         this.gameStatus = document.getElementById('game-status');
         this.resetBtn = document.getElementById('reset-btn');
+        this.difficultySelect = document.getElementById('difficulty');
         
         this.gameStarted = false;
         this.gameOver = false;
@@ -18,6 +26,20 @@ class Minesweeper {
         
         this.initGame();
         this.setupEventListeners();
+    }
+    
+    setDifficulty(difficulty) {
+        this.currentDifficulty = difficulty;
+        const config = this.difficulties[difficulty];
+        this.rows = config.rows;
+        this.cols = config.cols;
+        this.mineCount = config.mines;
+        
+        // 게임 보드 CSS 그리드 업데이트
+        this.gameBoard.style.gridTemplateColumns = `repeat(${this.cols}, 30px)`;
+        this.gameBoard.style.gridTemplateRows = `repeat(${this.rows}, 30px)`;
+        
+        this.initGame();
     }
     
     initGame() {
@@ -240,6 +262,10 @@ class Minesweeper {
         
         this.resetBtn.addEventListener('click', () => {
             this.initGame();
+        });
+        
+        this.difficultySelect.addEventListener('change', (e) => {
+            this.setDifficulty(e.target.value);
         });
     }
 }
