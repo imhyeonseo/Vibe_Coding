@@ -103,9 +103,7 @@ class Minesweeper {
         cell.className = 'cell';
         cell.textContent = '';
         
-        if (cellData.isFlagged) {
-            cell.classList.add('flagged');
-        } else if (cellData.isRevealed) {
+        if (cellData.isRevealed) {
             cell.classList.add('revealed');
             if (cellData.isMine) {
                 cell.classList.add('mine');
@@ -113,6 +111,8 @@ class Minesweeper {
                 cell.textContent = cellData.neighborMines;
                 cell.classList.add(`number-${cellData.neighborMines}`);
             }
+        } else if (cellData.isFlagged && !this.gameOver) {
+            cell.classList.add('flagged');
         }
     }
     
