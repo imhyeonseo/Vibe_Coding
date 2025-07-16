@@ -51,7 +51,7 @@ h1 {
 }
 
 #reset-btn {
-    background: #ffeb3b  ;
+    background: #ffe4d6  ;
     color: rgb(92, 61, 3);
     border: none;
     padding: 10px 20px;
@@ -62,7 +62,7 @@ h1 {
 }
 
 #reset-btn:hover {
-    background: #ff9900;
+    background: rgb(255, 138, 36);
 }
 
 .difficulty-selector {
