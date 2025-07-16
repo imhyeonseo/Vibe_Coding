@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: url('background.png') center/cover no-repeat, linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -14,11 +14,18 @@ body {
 }
 
 .container {
-    background: white;
+    background: linear-gradient(135deg, 
+        #ffe4d6 0%, 
+        #ffead9 25%, 
+        #fff0dc 50%, 
+        #fff6e0 75%, 
+        #fffcf0 100%);
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 h1 {
@@ -44,8 +51,8 @@ h1 {
 }
 
 #reset-btn {
-    background: #4CAF50;
-    color: white;
+    background: #ffeb3b  ;
+    color: rgb(92, 61, 3);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -55,7 +62,7 @@ h1 {
 }
 
 #reset-btn:hover {
-    background: #45a049;
+    background: #ff9900;
 }
 
 .difficulty-selector {
