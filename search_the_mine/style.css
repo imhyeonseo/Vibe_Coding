@@ -58,6 +58,20 @@ h1 {
     background: #45a049;
 }
 
+.instructions {
+    background: #e3f2fd;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #2196f3;
+}
+
+.instructions p {
+    margin: 0;
+    color: #1976d2;
+    font-weight: 500;
+}
+
 #game-board {
     display: grid;
     grid-template-columns: repeat(9, 40px);
@@ -102,10 +116,12 @@ h1 {
 .cell.flagged {
     background: #ffeb3b;
     color: #d32f2f;
+    border: 2px inset #ffeb3b;
 }
 
 .cell.flagged::after {
     content: '🚩';
+    font-size: 16px;
 }
 
 .cell.mine.revealed::after {
